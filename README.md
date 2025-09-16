@@ -60,6 +60,11 @@ git clone https://github.com/PodlubnyAY/mobile-price-classification.git <target_
 sh install_venv.sh
 ```
 
+Для деактивации виртуального окружения используется команда:
+```shell
+deactivate
+```
+
 
 # EDA
 Подробнее можно ознакомиться [здесь](./eda/eda.ipynb)
