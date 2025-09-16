@@ -1,3 +1,4 @@
 *.csv
 *.pcl
 *.venv
+*.ipynb_checkpoints
