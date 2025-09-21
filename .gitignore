@@ -2,3 +2,4 @@
 *.pcl
 *.venv
 *.ipynb_checkpoints
+*.pkl
