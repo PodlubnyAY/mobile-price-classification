@@ -61,3 +61,24 @@ deactivate
 - Обработанная выборка сохранена в файл ./data/clean_data.pkl
 
 [Подробнее](./eda/eda.ipynb)
+
+## Запуск mlflow
+
+Для запуска сервера необходимо перейти в директорию `mlflow` и выполнить bash-скрипт `start_mlflow.sh`
+
+```shell
+cd mlflow && $SHELL start_mlflow.sh
+```
+
+## Результаты исследования
+
+Лучший результат показала модель `10 selected features`
+со значением целевой метрики `f1-score` = 0.87
+
+После подброда параметров удалось улучшить точность до 0.88
+с параметрами: \
+`max_depth` = 10 \
+`max_features` = 0.1 \
+`n_estimators` = 50
+
+run_id = `b60196bec9ff445b8b1095d6710887da`
