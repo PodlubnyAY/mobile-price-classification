@@ -82,3 +82,7 @@ cd mlflow && $SHELL start_mlflow.sh
 `n_estimators` = 50
 
 run_id = `b60196bec9ff445b8b1095d6710887da`
+
+![model_runs](./mlflow/metrics.png)
+
+![model_versions](./mlflow/versions.png)
