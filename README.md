@@ -77,12 +77,6 @@ cd mlflow && $SHELL start_mlflow.sh
 
 После подброда параметров удалось улучшить точность до 0.88
 с параметрами: \
-`max_depth` = 10 \
-`max_features` = 0.1 \
-`n_estimators` = 50
+`n_estimators`: 74, `max_depth`: 22, `max_features`: 0.797474612969723
 
-run_id = `b60196bec9ff445b8b1095d6710887da`
-
-![model_runs](./mlflow/metrics.png)
-
-![model_versions](./mlflow/versions.png)
+run_id = `4d4beea10f1349d2b37e66eaf065dfa7`
