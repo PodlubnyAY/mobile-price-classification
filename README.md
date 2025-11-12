@@ -80,3 +80,71 @@ cd mlflow && $SHELL start_mlflow.sh
 `n_estimators`: 74, `max_depth`: 22, `max_features`: 0.797
 
 run_id = `4d4beea10f1349d2b37e66eaf065dfa7`
+
+## Создание сервиса
+
+### FastAPI
+
+• Обработка запросов на `/` возвращает ответ `{'Hello': 'world'}`
+• Обработка запросов на `/api/prediction` принимает идентификатор объекта и его признаки, использует модель для предсказания и возвращает price_range
+• При создании экземпляра класса загружает модель из файла `model.pkl`
+• Логирует результат загрузки модели.
+• Метод `predict` принимает `dict` с признаками объекта, преобразует его в `pandas.DataFrame`, подает на вход модели и возвращает предсказание.
+
+### Docker
+
+Создание образа:
+
+```bash
+   docker build . --tag <imange_name>:<image_version>
+```
+
+> <imange_name> - произваольное название образа\
+> <image_version> - версия образа\
+> Команда запускается в директории, где находится Dockerfile
+
+Запуск контейнера:
+
+```bash
+   docker run --rm -p 8001:8000 -v $(pwd)/../models:/models <imange_name>:<image_version>
+```
+
+> <imange_name>:<image_version> те же, что и при создании образа.
+
+### Проверка роботоспособности сервиса
+
+Подставим в тело запроса одну строку из датафрейма в виде JSON-объекта:
+
+```json
+ {
+    "battery_power": 1434,
+    "blue": 0,
+    "clock_speed": 1.4,
+    "dual_sim": 0,
+    "fc": 11,
+    "four_g": 1,
+    "int_memory": 49,
+    "m_dep": 0.5,
+    "mobile_wt": 108,
+    "n_cores": 6,
+    "pc": 18,
+    "px_height": 749,
+    "px_width": 810,
+    "ram": 1773,
+    "sc_h": 15,
+    "sc_w": 8,
+    "talk_time": 7,
+    "three_g": 1,
+    "touch_screen": 0,
+    "wifi": 1
+}
+```
+
+Сервис возвращает значение price_range от 0 до 3. Пример ответа:
+
+```json
+{
+  "price_range": "1",
+  "flat_id": 0
+}
+```

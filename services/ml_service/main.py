@@ -13,7 +13,7 @@ def root_dir():
 def make_prediction(flat_id: int, item_features: dict):
     prediction = app.handler.predict(item_features)[0]
     return {
-        'price': str(prediction),
+        'price_range': str(prediction),
         'flat_id': flat_id
     }
 
