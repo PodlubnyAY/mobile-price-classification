@@ -6,3 +6,4 @@
 mlartifacts
 mlruns.db
 mlflow/*.txt
+**/__pycache__
