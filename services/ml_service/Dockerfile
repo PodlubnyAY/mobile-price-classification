@@ -9,3 +9,4 @@ EXPOSE 8000
 VOLUME /models
 
 CMD ["python", "main.py", "--host", "0.0.0.0", "--port", "8000" ]
+# docker build -t ml-service:1 .
