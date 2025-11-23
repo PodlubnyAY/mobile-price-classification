@@ -19,6 +19,8 @@ services:
         delay: 5s
     networks:
       - net
+    depends_on:
+      - ml_service
 
 
   prometheus:
@@ -32,6 +34,8 @@ services:
     hostname: prometheus
     networks:
       - net
+    depends_on:
+      - ml_service
 
   
   graphana:
@@ -45,6 +49,8 @@ services:
       - "./grafana/data:/var/lib/grafana"
     networks:
       - net
+    depends_on:
+      - prometheus
       
 networks:
   net:

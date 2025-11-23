@@ -1,7 +1,6 @@
 import mlflow
 import pickle as pkl
 
-# Работаем с MLflow локально
 TRACKING_SERVER_HOST = "127.0.0.1"
 TRACKING_SERVER_PORT = 5000
 

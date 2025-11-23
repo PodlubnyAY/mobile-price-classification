@@ -2,11 +2,10 @@ import logging
 import pandas as pd
 import pickle as pkl
 
-logger = logging.getLogger("uvicorn.error")
+logger = logging.getLogger("api_handler")
 class FastAPIHandler():
 
     def __init__(self):
-        logger.warning('Loading model...')
         try:
             with open('../models/model.pkl', 'rb') as f:
                 self.model = pkl.load(f)
